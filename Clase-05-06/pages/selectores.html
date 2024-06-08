@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -34,14 +34,15 @@
 
     <div class="container">
         <label for="inputPassword5" class="form-label mt-5">Usuario</label>
-        <input type="text" id="inputPassword5" placeholder="Ingrese el usuario" class="form-control" aria-describedby="passwordHelpBlock">
+        <input id="user" type="text" id="inputPassword5" placeholder="Ingrese el usuario" class="form-control" aria-describedby="passwordHelpBlock">
         <label for="inputPassword5" class="form-label mt-4">Contraseña</label>
-        <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+        <input id="pw" type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
         <div class="d-grid gap-2">
-            <button type="button" class="btn btn-primary mt-3">Entrar</button>
+            <button type="button" class="btn btn-primary mt-3" onclick="pruebaBoton()">Entrar</button>
 
         </div>
     </div>
+    <script src="../js/logica.js"></script>
 </body>
 
 </html>
