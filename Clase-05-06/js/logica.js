@@ -1,24 +1,60 @@
-console.log('Logica conectada');
+console.log('Logica inicio sesion');
 
-const usuario = [{user:'Admin', clave:'1234'},
-{user:'root', clave:'123'}]
+const usuario = 'admin'
 const clave = '1234'
+let contador =0
 
 let frutas = ['Manzana','Pera','Sandia']
 
 
 function pruebaBoton(){
 
-    let user = document.getElementById('user').value
+    let user = document.getElementById('user').value.toLocaleUpperCase()
     let pw = document.getElementById('pw').value
 
-    if(usuario==user && clave==pw){
-        window.open('calculadora.html')  
+    if(usuario.toLocaleUpperCase()==user && clave==pw){
+        //logueado
+        setUser()
+        window.open('localStorage.html')  
     }else{
-        console.log('error de credenciales');        
+             
+        bloquearCuenta()
+        console.log('error de credenciales'); 
+    }
+}
+//bloquear el acceso
+function bloquearCuenta(){
+    let contadorStorage =localStorage.getItem('contador') || 0
+    console.log(`valor inicial storage ${contadorStorage}`);
+    if(contadorStorage==3){
+        console.log('cuenta bloqueada');
+    }else{
+        contarIntentos()  
     }
 
 }
+//contar cada vez que se equivoque
+
+function contarIntentos(){
+    let contadorStorage =localStorage.getItem('contador') || 0
+    contadorStorage++
+    console.log(`contador antes de sumar${ contadorStorage}`);
+    setContador(contadorStorage)
+}
+
+function setUser(){
+    localStorage.setItem('usuario',usuario)
+}
+
+function setContador(contador){
+    localStorage.setItem('contador',contador)
+}
+
+function desbloquearCuenta(){
+    localStorage.removeItem('contador')
+}
+
+
 function imprimirArreglo(){
     let posicion= document.getElementById('arrayPosicion').value
     console.log(localStorage.getItem('arregloFrutas'));
