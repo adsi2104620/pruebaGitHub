@@ -24,7 +24,7 @@ function pruebaBoton(){
 }
 //bloquear el acceso
 function bloquearCuenta(){
-    let contadorStorage =localStorage.getItem('contador') || 0
+    let contadorStorage =getStorage()
     console.log(`valor inicial storage ${contadorStorage}`);
     if(contadorStorage==3){
         console.log('cuenta bloqueada');
@@ -35,11 +35,19 @@ function bloquearCuenta(){
 }
 //contar cada vez que se equivoque
 
+function getStorage(){
+    return localStorage.getItem('contador') || 0
+}
 function contarIntentos(){
-    let contadorStorage =localStorage.getItem('contador') || 0
+    let contadorStorage =getStorage()
     contadorStorage++
-    console.log(`contador antes de sumar${ contadorStorage}`);
+    // console.log(`contador antes de sumar${ contadorStorage}`);
+    imprimir('contador antes de sumar...',contadorStorage)
     setContador(contadorStorage)
+}
+
+function imprimir(mensaje,valor){
+    console.log(`${mensaje}  ${valor}`);
 }
 
 function setUser(){
