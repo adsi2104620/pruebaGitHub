@@ -18,7 +18,8 @@ const totalPagar= document.getElementById('total')
 
 function agregarProducto(){
     //precio del producto   
-    //const nombreProducto = selectProductos2.options[selectProductos2.selectedIndex].text;
+    //const nombreProducto = selectProductos.options[selectProductos.selectedIndex].text;
+    const nombreProducto = selectProductos.options[selectProductos.selectedIndex].text
     //cantidad producto
     const precioProducto= selectProductos.value
     const cantidad= document.getElementById('cantidad').value
@@ -28,7 +29,7 @@ function agregarProducto(){
     const fila = document.createElement('tr')
 
     const nomProduct= document.createElement('td')
-    nomProduct.textContent='por definir'
+    nomProduct.textContent=nombreProducto
     fila.appendChild(nomProduct)
 
     const priceProduct= document.createElement('td')
