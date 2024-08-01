@@ -12,7 +12,7 @@ dataProductos.forEach(element => {
     selectProductos.appendChild(option)
 });
 
-
+const nombre ="demo"
 const tablaProductos= document.getElementById('tablaProductos')
 const totalPagar= document.getElementById('total')
 
